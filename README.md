@@ -31,7 +31,7 @@ In this tutorial user will have an e2e experience of the whole work flow for dat
 
 ## Runnning the sample
 
-1. In the **DataShareSample.csproj**, update the version to the most recent one, you can refer this to this [Azure Data Share Nuget package version] (https://www.nuget.org/packages/Microsoft.Azure.Management.DataShare):
+1. In the **DataShareSample.csproj**, update the version to the most recent one, you can refer this to this [Azure Data Share Nuget package version](https://www.nuget.org/packages/Microsoft.Azure.Management.DataShare):
 
     ```
     <PackageReference Include="Microsoft.Azure.Management.DataShare" Version="0.9.0-preview" />
