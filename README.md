@@ -1,14 +1,13 @@
 ---
-page_type: sample
+service: Azure Data Share
 languages:
 - csharp
 products:
 - dotnet
-description: "Add 150 character max description"
-urlFragment: "update-this-to-unique-url-stub"
+author: dadhe
 ---
 
-# Official Microsoft Sample
+# Azure Data Share API Sample
 
 <!-- 
 Guidelines on README format: https://review.docs.microsoft.com/help/onboard/admin/samples/concepts/readme-template?branch=master
@@ -18,47 +17,73 @@ Guidance on onboarding samples to docs.microsoft.com/samples: https://review.doc
 Taxonomies for products and languages: https://review.docs.microsoft.com/new-hope/information-architecture/metadata/taxonomies?branch=master
 -->
 
-Give a short description for your sample here. What does it do and why is it important?
-
-## Contents
-
-Outline the file contents of the repository. It helps users navigate the codebase, build configuration and any related assets.
-
-| File/folder       | Description                                |
-|-------------------|--------------------------------------------|
-| `src`             | Sample source code.                        |
-| `.gitignore`      | Define what to ignore at commit time.      |
-| `CHANGELOG.md`    | List of changes to the sample.             |
-| `CONTRIBUTING.md` | Guidelines for contributing to the sample. |
-| `README.md`       | This README file.                          |
-| `LICENSE`         | The license for the sample.                |
+In this tutorial user will have an e2e experience of the whole work flow for data share. This should include creating data share, adding datasets, synchronizaition etc. 
 
 ## Prerequisites
 
-Outline the required components and tools that a user might need to have on their machine in order to run the sample. This can be anything from frameworks, SDKs, OS versions or IDE releases.
-
-## Setup
-
-Explain how to prepare the sample once the user clones or downloads the repository. The section should outline every step necessary to install dependencies and set up any settings (for example, API keys and output folders).
+* **Azure subscription**. If you don't have a subscription, you can create a [free trial](http://azure.microsoft.com/pricing/free-trial/) account.
+* **Azure Storage account**. You use the blob storage as **source** data store. If you don't have an Azure storage account, see the [Create a storage account](../storage/common/storage-create-storage-account.md#create-a-storage-account) article for steps to create one.
+* **Azure Data Share account**. You use the data share to perform data sharing operations. If you don't have an Azure Data Share account, see the [Create an Azure Data Share Account](https://docs.microsoft.com/en-us/azure/data-share/share-your-data) article for steps to create one.
+* **Permission to add role assignment to the storage account**. This is present in the Microsoft.Authorization/role assignments/write permission. This permission exists in the owner role.
+* **Visual Studio** 2013, 2015, or 2017. The walkthrough in this article uses Visual Studio 2017.
+* **Download and install [Azure .NET SDK](http://azure.microsoft.com/downloads/)**.
+* **Create an application in Azure Active Directory** following [this instruction](../azure-resource-manager/resource-group-create-service-principal-portal.md#create-an-azure-active-directory-application). Make note of the following values that you use in later steps: **application ID**, **authentication key**, and **tenant ID**. Assign application to "**Contributor**" role by following instructions in the same article.
 
 ## Runnning the sample
 
-Outline step-by-step instructions to execute the sample and see its output. Include steps for executing the sample from the IDE, starting specific services in the Azure portal or anything related to the overall launch of the code.
+1. In the **DataShareSample.csproj**, update the version to the most recent one, you can refer this to this [Azure Data Share Nuget package version] (https://www.nuget.org/packages/Microsoft.Azure.Management.DataShare):
 
-## Key concepts
+    ```
+    <PackageReference Include="Microsoft.Azure.Management.DataShare" Version="0.9.0-preview" />
+    ```
+2. Set values for variables in the **AppSetting.json** file, these values are supposed to be created following the patterns mentioned above in prerequisities: 
 
-Provide users with more context on the tools and services used in the sample. Explain some of the code that is being used and how services interact with each other.
+    ```json
 
-## Contributing
+    "configs": {
+        "provider": {
+            "tenantId": "",
+            "clientId": "",
+            "objectId": "",
+            "secret": "",
+            "subscriptionId": "",
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
+            "dataShareResourceGroup": "",
+            "dataShareAccountName": "",
+            "dataShareShareName": "",
+            "dataShareInvitation": "",
+            "dataShareDataSetName": "",
+            "dataShareDataSetMappingName": "",
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+            "storageResourceGroup": "",
+            "storageAccountName": "",
+            "storageContainerName": "",
+            "storageBlobName": ""
+          },
+        "consumer": {
+            "tenantId": "",
+            "clientId": "",
+            "objectId": "",
+            "secret": "",
+            "subscriptionId": "",
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+            "dataShareResourceGroup": "",
+            "dataShareAccountName": "",
+            "dataShareShareSubscriptionName": "",
+            "dataShareInvitation": "",
+            "dataShareDataSetName": "",
+            "dataShareDataSetMappingName": "",
+
+            "storageResourceGroup": "",
+            "storageAccountName": "",
+            "storageContainerName": "",
+            "storageBlobName": ""
+          }
+      }
+
+    ```
+
+## See Also
+
+For the further information you can refer to this [Tutorial](https://docs.microsoft.com/en-us/azure/data-share/share-your-data).
+
