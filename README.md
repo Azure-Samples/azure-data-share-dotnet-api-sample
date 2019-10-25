@@ -1,4 +1,5 @@
 ---
+page_type: sample
 service: Azure Data Share
 languages:
 - csharp
