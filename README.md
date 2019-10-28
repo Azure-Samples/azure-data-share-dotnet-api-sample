@@ -7,8 +7,6 @@ products:
 - azure
 extensions:
 - platforms: dotnet
-- service: data share
-author: dadhe
 ---
 
 # Azure Data Share API Sample
