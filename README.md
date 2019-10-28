@@ -6,8 +6,8 @@ languages:
 products:
 - azure
 extensions:
--platforms: dotnet
--service: data share
+- platforms: dotnet
+- service: data share
 author: dadhe
 ---
 
