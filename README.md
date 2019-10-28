@@ -4,7 +4,10 @@ service: Azure Data Share
 languages:
 - csharp
 products:
-- dotnet
+- azure
+extensions:
+-platforms:dotnet
+-service:data share
 author: dadhe
 ---
 
