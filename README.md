@@ -8,6 +8,8 @@ extensions:
 - platforms: dotnet
 - service: Azure Data Share
 description: This sample will give you an e2e experience of the whole work flow for data share. It should include creating data share, adding datasets, synchronizaition etc.
+urlFragment: data-share
+
 ---
 
 # Azure Data Share API Sample
