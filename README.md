@@ -7,11 +7,11 @@ products:
 extensions:
 - platforms: dotnet
 - service: Azure Data Share
+description: This sample will give you an e2e experience of the whole work flow for data share. It should include creating data share, adding datasets, synchronizaition etc.
 ---
 
 # Azure Data Share API Sample
 
-In this tutorial user will have an e2e experience of the whole work flow for data share. This should include creating data share, adding datasets, synchronizaition etc.
 
 <!-- 
 Guidelines on README format: https://review.docs.microsoft.com/help/onboard/admin/samples/concepts/readme-template?branch=master
@@ -20,6 +20,8 @@ Guidance on onboarding samples to docs.microsoft.com/samples: https://review.doc
 
 Taxonomies for products and languages: https://review.docs.microsoft.com/new-hope/information-architecture/metadata/taxonomies?branch=master
 -->
+
+In this tutorial user will have an e2e experience of the whole work flow for data share. This should include creating data share, adding datasets, synchronizaition etc.
 
 ## Prerequisites
 
