@@ -60,7 +60,7 @@ namespace DataShareSample
                 consumerSourceDataSet);
 
             Console.WriteLine("\r\n\r\nInitiate a snapshot copy (duration depends on how large the data is)...");
-            OperationResponse response = consumerContext.Synchronize();
+            ShareSubscriptionSynchronization response = consumerContext.Synchronize();
             Console.WriteLine(
                 $"Synchronization Status: {response.Status}. Check resource {consumerAccount.Id} on https://portal.azure.com for further details. \r\n\r\n Hit Enter to continue...");
 
