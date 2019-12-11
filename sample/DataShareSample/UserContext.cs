@@ -336,7 +336,7 @@ namespace DataShareSample
             }
         }
 
-        public OperationResponse Synchronize()
+        public ShareSubscriptionSynchronization Synchronize()
         {
             try
             {

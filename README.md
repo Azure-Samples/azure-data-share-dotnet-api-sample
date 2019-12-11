@@ -12,7 +12,7 @@ urlFragment: data-share
 
 ---
 
-# Azure Data Share API Sample
+## Azure Data Share API Sample
 
 
 <!-- 
