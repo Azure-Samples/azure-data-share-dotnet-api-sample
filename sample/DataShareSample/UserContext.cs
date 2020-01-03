@@ -4,6 +4,9 @@
 //  </copyright>
 // -----------------------------------------------------------------------
 
+/*
+ * This example works with Microsoft.Azure.Management.DataShare greater than 1.0.0
+ */
 namespace DataShareSample
 {
     using System;
@@ -271,7 +274,15 @@ namespace DataShareSample
                 }
             }
 
-            var shareSubscriptionPayload = new ShareSubscription { InvitationId = invitation.InvitationId };
+            ConsumerInvitation consumerInvitation = this.DataShareClient.ConsumerInvitations.Get(
+                Configuration.Location,
+                invitation.InvitationId);
+
+            var shareSubscriptionPayload = new ShareSubscription
+                {
+                    InvitationId = invitation.InvitationId,
+                    SourceShareLocation = consumerInvitation.Location
+            };
 
             return this.DataShareClient.ShareSubscriptions.Create(
                 this.Principal.DataShareResourceGroup,
