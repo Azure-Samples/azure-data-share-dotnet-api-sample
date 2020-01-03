@@ -12,7 +12,8 @@ namespace DataShareSample
     {
         public static readonly Uri ArmEndpoint = new Uri("https://management.azure.com");
         public static readonly Uri AuthorizationEndpoint = new Uri("https://login.windows.net");
-        public const string Location = "EastUS2";
+
+        public const string Location = "EastUS";
 
         public Principal Provider { get; set; }
 
