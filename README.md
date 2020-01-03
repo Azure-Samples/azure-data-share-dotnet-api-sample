@@ -40,7 +40,7 @@ In this tutorial user will have an e2e experience of the whole work flow for dat
 1. In the **DataShareSample.csproj**, update the version to the most recent one, you can refer this to this [Azure Data Share Nuget package version](https://www.nuget.org/packages/Microsoft.Azure.Management.DataShare):
 
     ```
-    <PackageReference Include="Microsoft.Azure.Management.DataShare" Version="0.9.0-preview" />
+    <PackageReference Include="Microsoft.Azure.Management.DataShare" Version="1.0.0" />
     ```
 2. Set values for variables in the **AppSetting.json** file, these values are supposed to be created following the patterns mentioned above in prerequisities: 
 
